@@ -9,6 +9,7 @@ async function fetchData() {
   for (let folder in index) {
     const spacerEl = document.createElement('div')
     spacerEl.classList.add('spacer')
+    spacerEl.innerHTML = folder + ' &rarr;'
     mainEl.appendChild(spacerEl)
 
     for (let caseDocument of index[folder].documents) {

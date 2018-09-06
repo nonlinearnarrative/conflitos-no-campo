@@ -8,33 +8,44 @@ body {
 }
 body {
   font-family: Neue Haas Grotesk, Helvetica, Arial, sans-serif;
+  background: rgb(252, 0, 0);
 }
 h1 {
   position: fixed;
   top: 1rem;
   left: 1rem;
   font-weight: normal;
-  margin: 0;
+  width: 100%;
+  text-align: justify;
+  margin: 0 0.5rem;
 }
 .main {
-  padding: 1rem 0 0;
+  padding: 20rem 0 0;
   margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
 }
-.thumbnail {
-  border: 1px solid black;
+.thumbnail,
+.spacer {
   width: 10vw;
   max-width: 6rem;
   margin: 0.5rem;
-  display: block;
-  float: left;
+}
+.thumbnail {
+  border: 1px solid #000;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 .thumbnail:hover {
   border-color: #D3D3D3;
 }
 .spacer {
-  width: 12vw;
-  max-width: 10rem;
-  height: 1px;
-  display: block;
-  float: left;
+  text-align: right;
+  padding-top: 1%;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .spacer {
+    font-size: 0.8rem;
+  }
 }
