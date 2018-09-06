@@ -13,11 +13,16 @@ async function fetchData() {
 
     for (let caseDocument of index[folder].documents) {
       if (caseDocument.id) {
+        const thumbnailAnchorEl = document.createElement('a')
+        thumbnailAnchorEl.href = caseDocument.link
+        thumbnailAnchorEl.target = '_blank'
+
         const thumbnailEl = document.createElement('img')
         thumbnailEl.src = 'https://drive.google.com/thumbnail?authuser=0&sz=w320&id=' + caseDocument.id
         thumbnailEl.classList.add('thumbnail')
 
-        mainEl.appendChild(thumbnailEl)
+        thumbnailAnchorEl.appendChild(thumbnailEl)
+        mainEl.appendChild(thumbnailAnchorEl)
       }
     }
   }
