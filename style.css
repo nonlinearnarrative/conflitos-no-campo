@@ -1,0 +1,18 @@
+.thumbnail {
+  border: 1px solid black;
+  width: 10vw;
+  max-width: 6rem;
+  margin: 0.5rem;
+  display: block;
+  float: left;
+}
+.thumbnail:hover {
+  border-color: red;
+}
+.spacer {
+  width: 12vw;
+  max-width: 10rem;
+  height: 1px;
+  display: block;
+  float: left;
+}
