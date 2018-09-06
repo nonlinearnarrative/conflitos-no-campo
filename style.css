@@ -29,7 +29,7 @@ h1 {
   float: left;
 }
 .thumbnail:hover {
-  border-color: red;
+  border-color: #D3D3D3;
 }
 .spacer {
   width: 12vw;
