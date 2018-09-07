@@ -9,18 +9,29 @@
 </head>
 <body>
   <div id="main" class="main">
-    <h1>conflitos no campo <div class="lang">PT | EN</div></h1>
+    <h1>conflitos no campo <div class="lang">
+      <a @click="setLanguage('PT')" :class="{ active: (lang === 'PT') }">PT</a> |
+      <a @click="setLanguage('EN')" :class="{ active: (lang === 'EN') }">EN</a>
+    </div></h1>
+
+    <div v-if="(lang === 'PT')" class="intro">
+      Portuguese text
+    </div>
+
+    <div v-if="(lang === 'EN')" class="intro">
+      English text
+    </div>
 
     <div v-for="(caseFolder, caseNumber) in index" class="case">
       <div class="spacer">
         {{ caseNumber }} &rarr;
       </div>
 
-      <a v-for="caseDocument in caseFolder.documents" :href="caseDocument.link">
+      <a v-for="caseDocument in caseFolder.documents" :href="caseDocument.link" target="_blank">
         <img :src="'https://drive.google.com/thumbnail?authuser=0&sz=w320&id=' + caseDocument.id" class="thumbnail" onerror="this.src='placeholder.png'">
       </a>
 
-      <a class="external" v-for="externalLink in caseFolder.external" href="externalLink.link">
+      <a class="external" v-for="externalLink in caseFolder.external" :href="externalLink.link" target="_blank">
         &#8599; {{ externalLink.title }}
       </a>
     </div>
