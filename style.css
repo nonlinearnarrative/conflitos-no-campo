@@ -33,17 +33,29 @@ h1 {
   flex-wrap: wrap;
 }
 .thumbnail,
-.spacer {
+.spacer,
+.external {
   width: 10vw;
+  height: 14.14vw;
   max-width: 6rem;
+  max-height: 8.5rem;
   margin: 0.5rem;
 }
-.thumbnail {
+.thumbnail,
+.external {
   border: 1px solid #000;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
-.thumbnail:hover {
+.thumbnail:hover,
+.external:hover {
   border-color: #D3D3D3;
+}
+.external {
+  background: #000;
+  color: #fff;
+  padding: 0.5em;
+  text-transform: lowercase;
+  font-size: 1.5vw;
 }
 .spacer {
   text-align: right;
@@ -62,5 +74,11 @@ h1 {
 @media screen and (max-width: 600px) {
   .spacer {
     font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .external {
+    font-size: 1rem;
   }
 }
