@@ -9,34 +9,32 @@
 </head>
 <body>
   <div id="main" class="main">
-    <h1>conflitos no campo <div class="lang">
+    <h1>{{ lang === 'PT' ? 'conflitos no campo' : 'field conflicts' }} <div class="lang">
       <a @click="setLanguage('PT')" :class="{ active: (lang === 'PT') }">PT</a> |
       <a @click="setLanguage('EN')" :class="{ active: (lang === 'EN') }">EN</a>
     </div></h1>
 
     <div v-if="(lang === 'PT')" class="intro">
-      Desde 1975 a organização não governamental <i>Comissão Pastoral da Terra</i> <a href="https://www.cptnacional.org.br/">CPT</a> registra os conflitos que envolvem os trabalhadores de campo no Brasil e denuncia a violência sofrida por eles.
-O setor de documentação CPTs <i>Dom Tomás Balduino Centro de Documentação</i> <a href="http://goo.gl/TJ10G">CEDOC</a> coleta e sistematiza informações sobre violações de direitos humanos no campo.<br>
+      <p>Desde 1975 a organização não governamental <em>Comissão Pastoral da Terra</em> <a href="https://www.cptnacional.org.br/" target="_blank">CPT</a> registra os conflitos que envolvem os trabalhadores de campo no Brasil e denuncia a violência sofrida por eles.
+        O setor de documentação CPTs <em>Dom Tomás Balduino Centro de Documentação</em> <a href="http://goo.gl/TJ10G" target="_blank">CEDOC</a> coleta e sistematiza informações sobre violações de direitos humanos no campo.</p>
 
-O conjunto de documentos do CEDOC contém, entre outras, mais de 310.000 páginas de documentos digitalizados referentes a mais de 25.000 conflitos registrados no banco de dados do CPT. São documentos preparados pelo CPT, entidades e movimentos de parceiros ou encontrados em jornais e revistas.<br>
+      <p>O conjunto de documentos do CEDOC contém, entre outras, mais de 310.000 páginas de documentos digitalizados referentes a mais de 25.000 conflitos registrados no banco de dados do CPT. São documentos preparados pelo CPT, entidades e movimentos de parceiros ou encontrados em jornais e revistas.</p>
 
-Este site oferece uma visão geral de todos os documentos arquivados de 44 casos emblemáticos de conflitos de campo listados pelo CEDOC, complementados com informações adicionais para cada caso.<br>
+      <p>Este site oferece uma visão geral de todos os documentos arquivados de 44 casos emblemáticos de conflitos de campo listados pelo CEDOC, complementados com informações adicionais para cada caso.</p>
 
- <br>
-
-O uso dos documentos da coleção em publicações é gratuito, desde que sejam feitas referências.
+      <p>Licença: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></p>
 
     </div>
 
     <div v-if="(lang === 'EN')" class="intro">
-      Since 1975 the non-governmental organization Pastoral Land Commission CPT records the conflicts that involve field workers in Brazil and denounces the violence suffered by them. 
-The CPTs documentation sector Dom Tomás Balduino Documentation Center CEDOC collects and systematizes information on violations of human rights in the field. 
+      <p>Since 1975 the non-governmental organization <em>Pastoral Land Commission</em> <a href="https://www.cptnacional.org.br/" target="_blank">CPT</a> records the conflicts that involve field workers in Brazil and denounces the violence suffered by them.
+        The CPT&rsquo;s documentation sector <em>Dom Tomás Balduino Documentation Center</em> <a href="http://goo.gl/TJ10G" target="_blank">CEDOC</a> collects and systematizes information on violations of human rights in the field.</p>
 
-The set of documents of CEDOC contains amongst other more than 310,000 pages of scanned documents relating to more than 25,000 conflicts recorded in the CPT database. These are documents prepared by the CPT, entities and partner movements, or found in newspapers and magazines.
+      <p>The set of documents of CEDOC contains amongst other more than 310,000 pages of scanned documents relating to more than 25,000 conflicts recorded in the CPT database. These are documents prepared by the CPT, partnered entities and movements, or found in newspapers and magazines.</p>
 
-This website offers you an overview of all archived documents of 44 emblematic cases of field conflicts listed by CEDOC supplemented with additional information for each case.
+      <p>This website offers an overview of all archived documents of 44 emblematic cases of field conflicts listed by CEDOC, supplemented with additional information for each case.</p>
 
-The use of the documents of the collection in publications is free, as long as references are made.
+      <p>License: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></p>
     </div>
 
     <div v-for="(caseFolder, caseNumber) in index" class="case">
