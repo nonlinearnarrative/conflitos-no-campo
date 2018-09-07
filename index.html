@@ -8,11 +8,24 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>conflitos no campo</h1>
-  <div id="main" class="main"></div>
-  <div class="toolbar">
-    <input type="range" min="1" max="5" value="2.5">
+  <h1>conflitos no campo <div class="lang">PT | EN</div></h1>
+  <div id="main" class="main">
+
+    <div v-for="(caseFolder, caseNumber) in index">
+      <div class="spacer">
+        {{ caseNumber }} &rarr;
+      </div>
+      <a v-for="caseDocument in caseFolder.documents" :href="caseDocument.link">
+        <img :src="'https://drive.google.com/thumbnail?authuser=0&sz=w320&id=' + caseDocument.id" class="thumbnail">
+      </a>
+    </div>
+
+    <div class="toolbar">
+      <input type="range" min="1" max="5" value="2.5">
+    </div>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
