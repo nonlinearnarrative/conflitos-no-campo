@@ -8,13 +8,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>conflitos no campo <div class="lang">PT | EN</div></h1>
   <div id="main" class="main">
+    <h1>conflitos no campo <div class="lang">PT | EN</div></h1>
 
-    <div v-for="(caseFolder, caseNumber) in index">
+    <div v-for="(caseFolder, caseNumber) in index" class="case">
       <div class="spacer">
         {{ caseNumber }} &rarr;
       </div>
+
       <a v-for="caseDocument in caseFolder.documents" :href="caseDocument.link">
         <img :src="'https://drive.google.com/thumbnail?authuser=0&sz=w320&id=' + caseDocument.id" class="thumbnail">
       </a>
