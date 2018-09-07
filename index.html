@@ -37,13 +37,13 @@
       <p>License: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></p>
     </div>
 
-    <div v-for="(caseFolder, caseNumber) in index" class="case">
+    <div v-for="(caseFolder, caseNumber) in filteredIndex" class="case">
       <div class="spacer">
         {{ caseNumber }} &rarr;
       </div>
 
       <a v-for="caseDocument in caseFolder.documents" :href="caseDocument.link" target="_blank">
-        <img :src="'https://drive.google.com/thumbnail?authuser=0&sz=w320&id=' + caseDocument.id" class="thumbnail" onerror="this.src='placeholder.png'">
+        <img :src="'https://drive.google.com/thumbnail?authuser=0&sz=w50&id=' + caseDocument.id" class="thumbnail" onerror="this.src='placeholder.png'">
       </a>
 
       <a class="external" v-for="externalLink in caseFolder.external" :href="externalLink.link" target="_blank">
@@ -52,7 +52,7 @@
     </div>
 
     <div class="toolbar">
-      <input type="range" min="1" max="5" value="2.5">
+      <input type="text" v-model="search" :placeholder="lang === 'PT' ? 'Pesquisa…' : 'Search…'">
     </div>
   </div>
 
